@@ -42,7 +42,6 @@ def hearth(message):
                 string += "🤍"
             string += "\n"
         bot.edit_message_text(string, message.chat.id, message_id.message_id)
-        time.sleep(1)
     bot.edit_message_text(message.text, message.chat.id, message_id.message_id)
 
 
