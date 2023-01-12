@@ -47,7 +47,6 @@ def beautiful_hearth(message):
     # определение фигуры
     try:
         figure = {"сердце" : hearth, "круг" : circle, "квадрат" : square}[message.text.split(" ", 1)[0].lower()]
-        print(message.text.lower().split(" ", 1))
     except KeyError:
         bot.send_message(message.chat.id, "Упс, что-то пошло не так. Проверьте формат сообщения!")
         return "Invalid Input"
