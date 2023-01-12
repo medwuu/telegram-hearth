@@ -1,6 +1,3 @@
-# todo:
-# сделать inline mode
-
 import telebot
 import time
 
@@ -41,12 +38,9 @@ square = "\
 ⬜🟥🟥🟥🟥🟥🟥🟥⬜\n\
 ⬜⬜⬜⬜⬜⬜⬜⬜⬜"
 
-
 @bot.message_handler(commands=['start', 'help'])
 def start(message):
     bot.send_video(message.chat.id, open("media/presentation.mp4", "rb"), caption="Привет, я бот, который делает ✨магию✨. Просто отправь мне название фигуры (сердце, квадрат, или круг), а затем любой текст и увидишь магию!\nПример:\n<code>круг Привет, Мир!</code>\n<code>Сердце Люблю Вас!</code>", parse_mode='html')
-
-
 
 @bot.message_handler(content_types=['text'])
 def beautiful_hearth(message):
@@ -91,13 +85,5 @@ def beautiful_hearth(message):
         time.sleep(0.2)
     # вывод текста пользователя
     bot.edit_message_text(message.text.split(" ", 1)[1], message.chat.id, message_id)
-
-
-
-
-
-
-
-
 
 bot.polling(non_stop=True)
